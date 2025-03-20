@@ -6,7 +6,6 @@
     <title>Projeto2</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
-
 </head>
 <body>
 
@@ -22,14 +21,27 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('home') }}">Home</a>
+                            @if(Auth::check())
+                                <a class="nav-link" href="{{ route('home2') }}">Home</a>
+                            @else
+                                <a class="nav-link" href="{{ route('home1') }}">Home</a>
+                            @endif
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('about') }}">About Us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
-                        </li>
+                        @if(!Auth::check())
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('about') }}">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-link nav-link">Logout</button>
+                                </form>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -41,7 +53,6 @@
                 @yield('content')
             </div>
         </main>
-
     </div>
 </body>
 </html>

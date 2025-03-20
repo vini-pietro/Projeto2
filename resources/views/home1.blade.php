@@ -9,6 +9,12 @@
     <!-- <a href="{{ route('about') }}" class="btn btn-primary btn-lg">Saiba Mais</a> botao para saiba mais -->
 </div>
 
+<div>
+<a href="{{ route('register') }}" class="btn btn-primary mt-3">Criar Usuário</a>
+
+<a href="{{ route('login') }}" class="btn btn-success mt-3">Fazer Login</a>
+
+</div>
 <!-- Seção de Destaques -->
 <div class="container mt-5">
     <div class="row">
