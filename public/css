@@ -1,0 +1,61 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garante que o body ocupe toda a tela */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Wrapper que empurra o conteúdo */
+.wrapper {
+    flex: 1;
+}
+
+/* Navbar fixa no topo */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #100f1f !important;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Links da Navbar */
+.navbar a {
+    color: rgb(224, 224, 230);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+/* Conteúdo principal ocupa espaço */
+.content {
+    flex: 1;
+    padding-top: 80px; /* Ajuste para evitar sobreposição da navbar */
+}
+/* Ajustes para o conteúdo principal */
+.jumbotron {
+    background: linear-gradient(120deg, #007bff, #6610f2);
+    color: rgb(205, 82, 82);
+    padding: 60px 20px;
+    border-radius: 10px;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
