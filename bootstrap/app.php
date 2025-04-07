@@ -11,8 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
-    })
+        $middleware->alias([
+            'is_god' => \App\Http\Middleware\IsGod::class,
+        ]);
+        })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
