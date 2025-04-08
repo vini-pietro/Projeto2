@@ -37,7 +37,7 @@
 <form action="{{ route('god.user.role', $user->id) }}" method="POST" style="display:inline-block;">
     @csrf
     <input type="hidden" name="role" value="{{ $user->role === 'user' ? 'admin' : 'user' }}">
-    <button type="submit" class="btn btn-sm btn-warning">Mudar Role</button>
+    <button type="submit" class="btn btn-sm btn-primary">Mudar Role</button>
 </form>
                             </td>
                         </tr>
@@ -77,7 +77,7 @@
     <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
 </form>
 
-<a href="{{ route('god.event.participants', $evento->id) }}" class="btn btn-sm btn-info">Ver Participantes</a>
+<a href="{{ route('god.event.participants', $evento->id) }}" class="btn btn-sm btn-primary">Ver Participantes</a>
                             </td>
                         </tr>
                     @endforeach
@@ -85,5 +85,5 @@
             </table>
         </div>
     </div>
-</div>
+</div><br>
 @endsection
