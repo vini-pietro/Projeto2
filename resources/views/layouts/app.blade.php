@@ -59,8 +59,9 @@
 
     @if(auth()->user()->role === 'god')
         <li class="nav-item">
-            <span class="nav-link">
-                <span class="badge text-dark">GOD 👑</span>
+            <a class="nav-link"  href="{{ route('god.dashboard') }}">GOD 👑</a>
+                <!-- <span class="badge text-dark" href="{{ route('god.dashboard') }}">GOD 👑</span> -->
+                <!-- <a class="nav-link" href="{{ route('god.dashboard') }}">Dashboard</a> -->
             </span>
         </li>
     @endif
