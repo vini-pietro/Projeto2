@@ -25,7 +25,19 @@
         @empty
             <li class="list-group-item">You are not in any group.</li>
         @endforelse
-    </ul>
+    </ul><br>
+
+    <div class="card" style="width: 18rem;">
+  <img src="..\picture.png" class="card-img-top" alt="">
+  <div class="card-body">
+  @forelse($userGroups as $group)
+    <h5 class="card-title">{{ $group->name}}</h5>
+    @empty
+    <p class="card-text">Esse e o seu grupo!</p>
+    <a href="#" class="btn btn-primary">Join event</a>
+    @endforelse
+  </div>
+</div>
 
     <!-- Listagem dos eventos do usuário -->
     <h3 class="mt-4">Your Events:</h3>
@@ -58,6 +70,6 @@
             <li class="list-group-item">No pending invitations</li>
         @endforelse
     </ul>
-</div>
+</div><br>
 
 @endsection
